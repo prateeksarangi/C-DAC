@@ -1,29 +1,36 @@
 #include<iostream>
-#include<stdio.h>
-#include<omp.h>
+#include <omp.h>
+
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int n = 3, m;
-    cout<<"Enter the number of characters:- ";
-    cin>>m;
-    char ch[m], t = 'a';
-    int i, j, k;
-    for(i = 0; i<m; i++){
+    int n, i, j, k;
+    char ch[35], t = 'a';
+
+    #pragma omp parallel for num_threads(8)
+    for(i = 0; i<36; i++){
         ch[i] = t;
         t++;
+        if(t == '{')
+            t = '0';
     }
 
+    for(i=0; i<36; i++)
+        cout<<ch[i]<<" ";
+    cout<<endl;
+
+    cout<<"Enter the numbers of characters:- ";
+    cin>>n;
+
     double before = omp_get_wtime();
-    #pragma omp parallel
-    for(i=0; i<m; i++)
-        for(j=0; j<m; j++)
-            #pragma omp for
-            for(k=0; k<m; k++)
-                printf("Executing in thread number:- %d\nResult:- %c%c%c\n", omp_get_thread_num(), ch[i], ch[j], ch[k]);
-                
+
+    #pragma omp parallel for num_threads(32)
+    for(i = 0; i < n*n*n; i++)
+        printf("Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
+    
     double after = omp_get_wtime();
     cout<<"Time total:- "<<after - before<<endl;
+
     return 0;
 }

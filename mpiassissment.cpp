@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
     
 */
 
-    if(my_rank == MASTER){
+    if(my_rank != MASTER){
         div = (n*n*n) / comm_sz;
 
         for(id=1; id<comm_sz; id++){
@@ -51,19 +51,16 @@ int main(int argc, char const *argv[])
         }
 
         for(i=0; i < div; i++)
-            printf("Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
-
-        for(id = 1; id < div; id++){
-            ierr = MPI_Recv(&partial_ans, 1, MPI_LONG, MPI_ANY_SOURCE, return_tag, MPI_COMM_WORLD, status);
-            sender = status.MPI_SOURCE;
-        }
-
-
+            sprintf(greeting, "Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
+            MPI_Send(greeting, strlen(greeting)+1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
     }
 
     else{
-        ierr = MPI_Recv(&to_recieve, 1, MPI_INT, MASTER, send_tag, MPI_COMM_WORLD, &status);
-        ierr = 
+        printf("Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
+        for(int q=1; q < div; q++){
+            MPI_Recv(greeting, MAX_STRING, MPI_CHAR, q, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            printf("%s \n", greeting);
+        } 
     }
     return 0;
 }

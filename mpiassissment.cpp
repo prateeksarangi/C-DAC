@@ -29,12 +29,6 @@ int main(int argc, char const *argv[])
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-/*
-    for(i = 0; i < n*n*n; i++)
-        printf("Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
-    
-*/
-
     if(my_rank != MASTER){
         div = (n*n*n) / comm_sz;
 
@@ -46,8 +40,6 @@ int main(int argc, char const *argv[])
                 end = n-1;
 
             to_send = end - start + 1;
-
-            ierr = MPI_Send(&to_send, 1, MPI_INT, id, send_tag, MPI_COMM_WORLD); 
         }
 
         for(i=0; i < div; i++)

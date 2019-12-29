@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
         if(t == '{')
             t = '0';
     }
+    
 
     cout<<"Enter the numbers of characters:- ";
     cin>>n;

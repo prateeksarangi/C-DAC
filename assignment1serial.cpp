@@ -14,10 +14,6 @@ int main(int argc, char const *argv[])
             t = '0';
     }
 
-    for(i=0; i<36; i++)
-        cout<<ch[i]<<" ";
-    cout<<endl;
-
     cout<<"Enter the numbers of characters:- ";
     cin>>n;
 

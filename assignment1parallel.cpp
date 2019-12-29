@@ -8,17 +8,12 @@ int main(int argc, char const *argv[])
     int n, i, j, k;
     char ch[35], t = 'a';
 
-    #pragma omp parallel for num_threads(8)
     for(i = 0; i<36; i++){
         ch[i] = t;
         t++;
         if(t == '{')
             t = '0';
     }
-
-    for(i=0; i<36; i++)
-        cout<<ch[i]<<" ";
-    cout<<endl;
 
     cout<<"Enter the numbers of characters:- ";
     cin>>n;

@@ -1,0 +1,2 @@
+ssh -X vssut2@10.208.34.25 -p 22
+Password:- vssut2@123

@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     int n, i, j, k;
-    char ch[35], t = 'a';
+    char ch[36], t = 'a';
 
     for(i = 0; i<36; i++){
         ch[i] = t;

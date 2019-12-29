@@ -1,6 +1,8 @@
 #include<iostream>
+#include<omp.h>
 #include<mpi.h>
 #define MASTER 0
+#define MAX_STRING 1000
 #define send_tag 2001
 #define return_tag 2002
 
@@ -18,13 +20,13 @@ int main(int argc, char const *argv[])
         if(t == '{')
             t = '0';
     }
-    
 
     cout<<"Enter the numbers of characters:- ";
     cin>>n;
 
     int comm_sz;
     int my_rank, div, end, start, to_send, to_recieve, ierr, partial_ans;
+    char greeting[MAX_STRING];
 
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);

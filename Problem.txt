@@ -1,12 +1,15 @@
+Submit Id:- omjadhav@cdac.in
+Folder name:- VSSUTStudent_PrateekSarangi
+Sub-folder name:- Code, Analysis&Output
+
+
 1. WAP in MPI that print your name only if number of processes is even, otherwise should return error message.
 2. WAP in MPI that should determine the partner process and then send and recieve a message with it.
 3. Observe the difference between blocking and non-blocking communication.
 4. WAP to calculate the value of Pi.(Dartboard algorithm)
 5. WAP to calculate the value of Pi, MPI.
 6. WAP to multipy two matrix.(parallel and serial separate)
-
-
-
-
-
-omjadhav@cdac.in
+7. WAP in MPI in that take data and send the same data to all the processes in the communicator.
+8. WAP in MPI that return sum of an array.
+9. WAP in MPI that initialize values of array in 1-25. The process should devide the values among 5 processes equally.
+10. WAP in MPI for a simple data decomposition such that the master task should first initialize an array and then distribute an array to other task. After the other task recieve an ADDITION operation in elements of array.

@@ -1,4 +1,3 @@
-#include<iostream>
 #include<stdio.h>
 #include<mpi.h>
 //#include<omp.h>
@@ -16,8 +15,8 @@ int main() {
 	}
 
 	int n;
-	cout<<"Enter the number of characters: ";
-	cin>>n;
+	printf("Enter the number of characters: ");
+	scanf("%d", &n);
 
 	int n_square = n*n, n_cube = n_square*n;
 

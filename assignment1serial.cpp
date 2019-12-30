@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
     double before = omp_get_wtime();
 
     for(i = 0; i < n*n*n; i++)
-        printf("Result:- %c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
+        printf("Result:- %c%c%c%c%c%c%c%c%c%c\nExecution in thread number:- %d\n", ch[(i/(n*n*n*n*n*n*n*n*n))%n], ch[(i/(n*n*n*n*n*n*n*n))%n], ch[(i/(n*n*n*n*n*n*n))%n], ch[(i/(n*n*n*n*n*n))%n], ch[(i/(n*n*n*n*n))%n], ch[(i/(n*n*n*n))%n], ch[(i/(n*n*n))%n], ch[(i/(n*n))%n], ch[(i/n)%n], ch[i%n], omp_get_thread_num());
     
     double after = omp_get_wtime();
     cout<<"Time total:- "<<after - before<<endl;

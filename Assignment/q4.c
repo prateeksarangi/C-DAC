@@ -1,8 +1,10 @@
+//Write a C program to calculate the value of pi. (DartBoard Algorithm) hint- divide no of darts.
 #include<stdio.h>
+#include<stdlib.h>
 #include<mpi.h>
 
 #define R 97
-#define NUM_SQUARE 10
+#define NUM_SQUARE 100
 
 int main() {
 	int px, py;

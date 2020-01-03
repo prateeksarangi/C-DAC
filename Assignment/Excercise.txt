@@ -1,0 +1,20 @@
+
+1. Write a MPI program that should print your name only if number of processes is even otherwise return error message.
+
+2. Write a MPI program that should determine partner process and then send and receive message (Your name and number) with it.
+
+3. Observe the difference between blocking and non-blocking communication.
+
+4. Write a C program to calculate the value of pi. (DartBoard Algorithm) hint- divide no of darts.
+
+5. Write a C program that initialize matrix a and b (user"s size). Multiply both matrix and store result in matrix c.
+
+6. Write a MPI program that take data(name or number), send that to all the processor and print them.
+
+7 & 8. Write a MPI program that should return the sum of all processes involved note:-one and all.
+
+9. WAP such that it should initilize an array of 1 - 25	and divide these values among 5 process equally	note:- use 2d array.
+
+10. WAP to decomposition simple data such that the master task should 1st initialize an array and then distribute an equal portion of that array to the other tasks. After the other task receive their portion of data, they should perform an ADDITION Operation on elements of array.
+
+Mail id - omjadhav@cdac.in

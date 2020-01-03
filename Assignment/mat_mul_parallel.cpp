@@ -11,15 +11,8 @@
 
 int main (int argc, char *argv[])
 {
-int	numtasks,              
-	taskid,                
-	numworkers,            
-	source,                
-	dest,                  
-	mtype,                 
-	rows,                  
-	averow, extra, offset, 
-	i, j, k, rc;           
+int	numtasks, taskid, numworkers, source, dest, mtype;                 
+int	rows, averow, extra, offset, i, j, k, rc;           
 double	a[NRA][NCA],          
 	b[NCA][NCB],           
 	c[NRA][NCB];           

@@ -1,2 +1,10 @@
 ssh -X vssut2@10.208.34.25 -p 22
 Password:- vssut2@123
+
+/home/vssut2/subrat1729/C-DAC
+
+/scratch/vssut2/Prateek
+
+/scratch/vssut2/Prateek/q-e/bin
+
+/scratch/vssut2/Prateek/q-e/pslibrary
